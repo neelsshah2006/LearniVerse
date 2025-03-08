@@ -1,33 +1,38 @@
-import Link from 'next/link';
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-const navbar = () => {
+const Navbar = () => {
   return (
-    <div className="bg-aq-800 w-full h-17 flex items-center sticky">
-           <Link className='text-3xl font-bold !m-4' href="/">
+    <div className="w-full h-20 flex items-center sticky top-0 px-4 py-2 bg-white shadow-md z-10">
+      <Link
+        className="flex gap-2 items-center justify-center text-2xl font-bold mr-4"
+        href="/"
+      >
+        <Image src="/logo.png" alt="LearniVerse Logo" width={50} height={50} />
         LearniVerse
       </Link>
-      <div className='gap-10 flex center !ml-70 font-semibold '>
-            <Link className='hover:text-blue-700' href="/">
-                Cohorts
-            </Link>
-            <Link className='hover:text-blue-700' href="/">
-                Doubts
-            </Link>
-            <Link className='hover:text-blue-700' href="/">
-            WorkShops
-            </Link>
+      <div className="hidden md:flex flex-grow justify-center gap-10 font-semibold">
+        <Link className="hover:text-blue-700" href="/">
+          Cohorts
+        </Link>
+        <Link className="hover:text-blue-700" href="/">
+          Doubts
+        </Link>
+        <Link className="hover:text-blue-700" href="/">
+          WorkShops
+        </Link>
       </div>
-      <div className='!ml-60 gap-5 flex  items-center text-center'>
-      <button className='border-2 rounded-2xl !p-3 w-25 hover:bg-red-400 cursor-pointer'>Login</button>
-      <button className='border-2 rounded-2xl !p-3 w-25 hover:bg-green-400 hover:text-black cursor-pointer bg-black text-white'>SignUp</button>
+      <div className="flex gap-5 items-center">
+        <button className="border-2 rounded-2xl px-3 py-1 cursor-pointer transition-all duration-200 ease-in-out hover:scale-105">
+          Login
+        </button>
+        <button className="border-2 rounded-2xl px-3 py-1 cursor-pointer bg-black text-white transition-all duration-200 ease-in-out hover:scale-105">
+          SignUp
+        </button>
       </div>
-     
-     
-
-
-
     </div>
-  )
-}
+  );
+};
 
-export default navbar
+export default Navbar;
