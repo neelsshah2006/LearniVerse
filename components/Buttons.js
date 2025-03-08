@@ -11,7 +11,7 @@ const Buttons = () => {
   };
 
   return (
-    <>
+    <div>
       <button
         className="border-2 rounded-2xl px-3 py-1 cursor-pointer transition-all duration-200 ease-in-out hover:scale-105"
         onClick={LoginHandler}
@@ -24,7 +24,7 @@ const Buttons = () => {
       >
         SignUp
       </button>
-    </>
+    </div>
   );
 };
 

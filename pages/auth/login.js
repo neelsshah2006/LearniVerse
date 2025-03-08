@@ -11,8 +11,8 @@ const Login = () => {
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
-    setMessage(""); 
+    e.preventDefault();
+    setMessage("");
 
     try {
       const response = await fetch("/api/Login", {
@@ -59,7 +59,12 @@ const Login = () => {
               <p className="text-center">Sign in to Continue to LearniVerse</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full">
+            <form
+              onSubmit={(e) => {
+                handleSubmit(e);
+              }}
+              className="flex flex-col gap-5 w-full"
+            >
               <div>
                 <label className="font-bold">Email:</label>
                 <input
@@ -100,7 +105,13 @@ const Login = () => {
               </div>
 
               {message && (
-                <p className={`text-center ${message.includes("successful") ? "text-green-500" : "text-red-500"}`}>
+                <p
+                  className={`text-center ${
+                    message.includes("successful")
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }`}
+                >
                   {message}
                 </p>
               )}

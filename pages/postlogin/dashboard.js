@@ -40,7 +40,6 @@ const dashboard = () => {
             </div>
           </div>
         </div>
-
         <div className="flex flex-col md:flex-row justify-between gap-4">
           <div className="bg-white w-full md:w-[30%] flex gap-5 p-3 rounded-2xl items-center">
             <div className="bg-blue-400 rounded-full w-10 h-10 flex justify-center">
