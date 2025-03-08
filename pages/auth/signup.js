@@ -34,7 +34,7 @@ const Signup = () => {
       setMessageType("success");
 
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      setMessage(error.message || "An error occurred. Please try again.");
       setMessageType("error");
     }
   };
@@ -67,7 +67,7 @@ const Signup = () => {
               <input
                 value={name}
                 onChange={(e) => {
-                  setname(e.target.value);
+                  setName(e.target.value);
                 }}
                 type="text"
                 name="name"
@@ -79,7 +79,7 @@ const Signup = () => {
               <input
                 value={email}
                 onChange={(e) => {
-                  setemail(e.target.value);
+                  setEmail(e.target.value);
                 }}
                 type="email"
                 name="email"
@@ -91,7 +91,7 @@ const Signup = () => {
               <input
                 value={password}
                 onChange={(e) => {
-                  setpassword(e.target.value);
+                  setPassword(e.target.value);
                 }}
                 type="password"
                 name="password"
@@ -107,6 +107,12 @@ const Signup = () => {
               </button>
             </div>
           </form>
+          {message && (
+          <div className={`text-center p-2 rounded-md ${messageType === "success" ? "text-green-600 bg-green-100" : "text-red-600 bg-red-100"}`}>
+            {message}
+          </div>
+        )}
+
           <span className="text-gray-500 text-center">
             Already have an account?
             <Link href="/auth/login" className="text-orange-500">
@@ -119,4 +125,4 @@ const Signup = () => {
   );
 };
 
-export default signup;
+export default Signup;
