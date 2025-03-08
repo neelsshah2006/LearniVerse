@@ -1,7 +1,12 @@
 import React from 'react'
 import Image from "next/image";
+import { useRouter } from 'next/router';
 
 const Learningcohorts = () => {
+  const router = useRouter();
+  const JoinHandler = ()=>{
+    router.push("/socket")
+  }
   return (
     <div className="flex flex-col md:flex-row justify-between gap-4">
       <div className="bg-white flex flex-col gap-5 p-4 rounded-2xl w-full md:w-[30%]">
@@ -11,7 +16,9 @@ const Learningcohorts = () => {
           <span>Next session: Tomorrow 3pm</span>
         </div>
         <div>
-          <button className="hover:bg-orange-300 font-semibold border p-2 rounded-md">Continue Learning</button>
+          <button onClick={()=>{
+            JoinHandler();
+          }} className="hover:bg-orange-300 font-semibold border p-2 rounded-md">Continue Learning</button>
         </div>
       </div>
     </div>
