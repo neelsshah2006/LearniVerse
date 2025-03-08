@@ -2,10 +2,43 @@ import Link from "next/link";
 import { useState } from "react";
 import Head from "next/head";
 
-const signup = () => {
-  const [name, setname] = useState("");
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+const Signup = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/SignUp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setMessage(data.message || "Signup failed");
+        setMessageType("error");
+        return;
+      }
+
+      setMessage(data.message || "Signup successful");
+      setMessageType("success");
+
+    } catch (error) {
+      setMessage("An error occurred. Please try again.");
+      setMessageType("error");
+    }
+  };
+  
   return (
     <>
       <Head>

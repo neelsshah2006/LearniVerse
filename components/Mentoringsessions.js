@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const Mentoringsessions = () => {
   return (
+
     <div className="flex flex-col md:flex-row items-center gap-4 p-4">
       <div className="hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out flex flex-col w-full md:w-[30%] bg-white gap-6 p-6 rounded-2xl max-w-md">
         <div className="flex gap-5 items-center">
