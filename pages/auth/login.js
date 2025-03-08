@@ -28,7 +28,9 @@ const Login = () => {
       if (!response.ok) {
         setMessage(data.message);
       } else {
-      setMessage("Login successful!");}
+      setMessage("Login successful!");
+      window.location.href = "/postlogin/dashboard";
+    }
       
     } 
     catch (error) {

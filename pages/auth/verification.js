@@ -21,8 +21,8 @@ const Verification = () => {
             An email has been sent to your email address. Please click the link
             in the email to verify your account.
           </p>
-          <Link href="/">
-            <div className="text-amber-400">Back to Home</div>
+          <Link href="https://mail.google.com">
+            <div className="text-blue-500">check your e-mail</div>
           </Link>
         </div>
       </div>
