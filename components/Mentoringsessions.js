@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 
 const Mentoringsessions = () => {
   return (
     <div>
       <div className="flex flex-col md:flex-row justify-between gap-4">
-        <div className="hover:shadow-2xl hover:scale-105 transition-transform duration-300 flex flex-col w-full md:w-[30%] bg-white gap-6 p-4 rounded-2xl">
+        <div className="hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out flex flex-col w-full md:w-[30%] bg-white gap-6 p-4 rounded-2xl">
           <div className="flex gap-5">
             <Image src="/man.svg" width={15} height={15} />
             <div className="flex flex-col">
@@ -13,7 +13,9 @@ const Mentoringsessions = () => {
               <span>You're the mentor</span>
             </div>
           </div>
-          <span className="font-bold text-2xl">Introduction to Machine Learning</span>
+          <span className="font-bold text-2xl">
+            Introduction to Machine Learning
+          </span>
 
           <div className="flex flex-col gap-3">
             <div className="flex justify-around">
@@ -38,19 +40,28 @@ const Mentoringsessions = () => {
             </div>
           </div>
 
-          <span className="bg-gray-300 w-fit p-1 rounded-2xl">Machine Learning</span>
+          <span className="bg-gray-300 w-fit p-1 rounded-2xl">
+            Machine Learning
+          </span>
 
           <div className="flex justify-between">
             <span className="flex gap-2 bg-amber-100 p-1 rounded-2xl w-fit">
-              <Image src="/coins.svg" width={20} height={20} className="rounded-b-4xl" />
+              <Image
+                src="/coins.svg"
+                width={20}
+                height={20}
+                className="rounded-b-4xl"
+              />
               <span>275 coins</span>
             </span>
-            <button className="bg-orange-400 text-white p-2 rounded-2xl cursor-pointer">Manage Session</button>
+            <button className="bg-orange-400 text-white p-2 rounded-2xl cursor-pointer">
+              Manage Session
+            </button>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Mentoringsessions
+export default Mentoringsessions;

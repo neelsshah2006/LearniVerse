@@ -1,9 +1,11 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import { Poppins } from "next/font/google";
 import Head from "next/head";
 import Works from "@/components/Works";
+import PopularCohort from "@/components/PopularCohort";
+import Upcomingsessions from "@/components/Upcomingsessions";
+import Footer from "@/components/Footer";
 
 const index = () => {
   return (
@@ -18,7 +20,8 @@ const index = () => {
         </div>
         <HeroSection />
         <Works />
-
+        <PopularCohort />
+        <Footer />
       </div>
     </>
   );

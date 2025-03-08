@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 
 const Upcomingsessions = () => {
@@ -13,7 +13,9 @@ const Upcomingsessions = () => {
               <span>Mentor</span>
             </div>
           </div>
-          <span className="font-bold text-2xl">Introduction to Machine Learning</span>
+          <span className="font-bold text-2xl">
+            Introduction to Machine Learning
+          </span>
 
           <div className="flex flex-col gap-3">
             <div className="flex justify-around">
@@ -38,19 +40,28 @@ const Upcomingsessions = () => {
             </div>
           </div>
 
-          <span className="bg-gray-300 w-fit p-1 rounded-2xl">Machine Learning</span>
+          <span className="bg-gray-300 w-fit p-1 rounded-2xl">
+            Machine Learning
+          </span>
 
           <div className="flex justify-between">
             <span className="flex gap-2 bg-amber-100 p-1 rounded-2xl w-fit">
-              <Image src="/coins.svg" width={20} height={20} className="rounded-b-4xl" />
+              <Image
+                src="/coins.svg"
+                width={20}
+                height={20}
+                className="rounded-b-4xl"
+              />
               <span>275 coins</span>
             </span>
-            <button className="bg-black text-white p-2 rounded-2xl cursor-pointer">Book seat</button>
+            <button className="bg-black text-white p-2 rounded-2xl cursor-pointer">
+              Book seat
+            </button>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Upcomingsessions
+export default Upcomingsessions;
