@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import io from "socket.io-client";
 
-const socket = io("https://learni-verse-theta.vercel.app/socket", { path: "/api/socket" });
+const socket = io("https://learni-verse-theta.vercel.app/socket", {
+  path: "/api/socket",
+});
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
