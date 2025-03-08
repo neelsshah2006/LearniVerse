@@ -5,6 +5,23 @@ const signup = () => {
   const [name, setname] = useState("")
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
+  const HandleSubmit=async (e) =>{
+    e.preventDefault()
+    try {
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className="bg-gray-200 min-h-screen flex justify-center items-center p-4">
       <div className="flex flex-col gap-8 bg-white shadow-2xl p-8 rounded-2xl w-full max-w-md">
@@ -12,7 +29,7 @@ const signup = () => {
           <h1 className="text-2xl font-bold">Create an account</h1>
           <span className="text-gray-500">Join the Learniverse community</span>
         </div>
-        <form onSubmit={(e) => { e.preventDefault() }}>
+        <form onSubmit={HandleSubmit}>
           <div className="flex flex-col gap-3">
             <label className="font-bold">Full Name</label>
             <input onChange={(e) => { setname(e.target.value) }} type="text" name="name" placeholder="Enter your full name" className="p-2 rounded-md border border-gray-300" required />
