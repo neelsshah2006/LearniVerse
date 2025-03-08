@@ -6,6 +6,7 @@ import Works from "@/components/Works";
 import PopularCohort from "@/components/PopularCohort";
 import Footer from "@/components/Footer";
 import { Element } from "react-scroll";
+import UpcomingWorkshops from "@/components/UpcomingWorkshops";
 
 const index = () => {
   return (
@@ -52,6 +53,9 @@ const index = () => {
         <Works />
         <Element name="PopularCohort">
           <PopularCohort />
+        </Element>
+        <Element name="UpcomingWorkshops">
+          <UpcomingWorkshops />
         </Element>
         <Footer />
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import SessionForm from "@/components/SessionForm";
 
 const createSession = () => {
   return (
@@ -11,7 +12,9 @@ const createSession = () => {
           content="Create a new learning session on LearniVerse."
         />
       </Head>
-      <div></div>
+      <div>
+        <SessionForm />
+      </div>
     </>
   );
 };
