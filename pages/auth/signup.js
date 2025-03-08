@@ -34,7 +34,7 @@ const Signup = () => {
       setMessage(data.message || "Signup successful");
       setMessageType("success");
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      setMessage(error.message || "An error occurred. Please try again.");
       setMessageType("error");
     }
   };
