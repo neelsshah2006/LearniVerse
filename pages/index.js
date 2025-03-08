@@ -12,7 +12,7 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>LearniVerse - The Peer to Peer Learning Academy</title>
+        <title>LearniVerse - The Peer to Peer Learning Community</title>
         <link rel="icon" href="/logo.png" />
         <meta
           name="description"
