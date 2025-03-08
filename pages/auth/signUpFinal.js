@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 
 const signUpFinal = () => {
   const [education, setEducation] = useState("");
@@ -66,6 +67,13 @@ const signUpFinal = () => {
 
   return (
     <>
+      <Head>
+        <title>Complete Sign Up - LearniVerse</title>
+        <meta
+          name="description"
+          content="Complete your sign up process by providing additional details on LearniVerse."
+        />
+      </Head>
       <div className="bg-gray-200 w-screen h-screen flex flex-col gap-3 p-4 md:p-8">
         <div className="mx-auto w-full max-w-md">
           <div className="bg-white flex flex-col p-6 md:p-10 justify-center items-center gap-6 md:gap-10 rounded-2xl shadow-2xs">
