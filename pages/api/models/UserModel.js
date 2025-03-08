@@ -64,7 +64,16 @@ const userSchema = new mongoose.Schema({
             ref: 'Educational'
         }
     ],
-
+    skills: 
+        {
+            type: Array,
+            default: []
+        }
+    ,
+    bio: {
+        type: String,
+        default: ""
+    },
 
     forgot_password_otp: {
         type: String,
@@ -74,7 +83,7 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: ""
     },
-    gender: {
+    Gender: {
         type: String,
         enum: ['male', "female", ""],
         default: ""

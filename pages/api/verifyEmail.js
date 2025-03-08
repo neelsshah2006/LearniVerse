@@ -2,7 +2,7 @@ import UserModel from "./models/UserModel";
 import connectDb from "@/config/connectDb";
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
+  if (req.method !== "GET") {
     return res.status(405).json({
       message: "Method Not Allowed",
       error: true,
@@ -47,11 +47,8 @@ export default async function handler(req, res) {
     user.verify_email = true;
     await user.save();
 
-    return res.status(200).json({
-      message: "Email verified successfully",
-      error: false,
-      success: true,
-    });
+    return res.redirect("/auth/login");
+    
   } catch (error) {
     return res.status(500).json({
       message: error.message || "Internal Server Error",

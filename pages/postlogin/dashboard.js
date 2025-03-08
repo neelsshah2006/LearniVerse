@@ -30,7 +30,7 @@ const dashboard = () => {
             <div className="flex gap-2 mt-4 md:mt-0">
               <span className="flex gap-2 bg-amber-100 p-1 rounded-2xl items-center">
                 <Image
-                  src="/coins.svg"
+                  src="/coins.svg" 
                   width={20}
                   height={20}
                   className="rounded-b-4xl"

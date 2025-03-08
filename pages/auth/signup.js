@@ -32,7 +32,8 @@ const Signup = () => {
       }
       else{
         setMessage(data.message || "Signup successful");
-        setMessageType("success");
+        setMessageType("success"); 
+        window.location.href = "/auth/signUpFinal"; 
       }
      
     } catch (error) {
