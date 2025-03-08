@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 
-const socket = io("https://learni-verse-theta.vercel.app"); //connect to signaling server
+const socket = io("https://learni-verse-theta.vercel.app/socket"); //connect to signaling server
 
 export default function Webrtc() {
   const localVideoRef = useRef(null); //using useRef ensures the video elements persist across re-renders without re-initialization.
