@@ -40,7 +40,7 @@ const Works = () => {
             education.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3  justify-center items-center gap-5">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3  justify-center items-center gap-5 mb-8">
           {data.map((val) => {
             return <WorksCard img={val.img} name={val.main} para={val.para} />;
           })}
