@@ -27,10 +27,11 @@ const Login = () => {
 
       if (!response.ok) {
         setMessage(data.message);
-      }
-
-      setMessage("Login successful!");
-    } catch (error) {
+      } else {
+      setMessage("Login successful!");}
+      
+    } 
+    catch (error) {
       setMessage(error.message);
     }
   };

@@ -30,9 +30,11 @@ const Signup = () => {
         setMessageType("error");
         return;
       }
-
-      setMessage(data.message || "Signup successful");
-      setMessageType("success");
+      else{
+        setMessage(data.message || "Signup successful");
+        setMessageType("success");
+      }
+     
     } catch (error) {
       setMessage(error.message || "An error occurred. Please try again.");
       setMessageType("error");
