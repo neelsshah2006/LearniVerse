@@ -1,13 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+import Buttons from "./Buttons";
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div className="w-full h-20 flex items-center sticky top-0 px-4 py-2 bg-white shadow-md z-10">
       <Link
         className="flex gap-2 items-center justify-center text-2xl font-bold mr-4"
-        href="/"
+        href={isLoggedIn ? "/postLogin/dashboard" : "/"}
       >
         <Image src="/logo.png" alt="LearniVerse Logo" width={50} height={50} />
         LearniVerse
@@ -24,17 +36,18 @@ const Navbar = () => {
         <Link className="hover:text-blue-700" href="/">
           Doubts
         </Link>
-        <Link className="hover:text-blue-700" href="/">
+        <ScrollLink
+          to="UpcomingWorkshops"
+          smooth={true}
+          duration={500}
+          className="hover:text-blue-700"
+          href="/"
+        >
           WorkShops
-        </Link>
+        </ScrollLink>
       </div>
       <div className="flex gap-5 items-center">
-        <button className="border-2 rounded-2xl px-3 py-1 cursor-pointer transition-all duration-200 ease-in-out hover:scale-105">
-          Login
-        </button>
-        <button className="border-2 rounded-2xl px-3 py-1 cursor-pointer bg-black text-white transition-all duration-200 ease-in-out hover:scale-105">
-          SignUp
-        </button>
+        {!isLoggedIn && <Buttons />}
       </div>
     </div>
   );
