@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import Head from "next/head";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +14,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
-
     try {
       const response = await fetch("/api/Login", {
         method: "POST",
@@ -26,15 +26,14 @@ const Login = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        setMessage(data.message);
+        setMessage(data.message || "Login failed. Please try again.");
       } else {
-      setMessage("Login successful!");
-      window.location.href = "/postlogin/dashboard";
-    }
-      
-    } 
-    catch (error) {
-      setMessage(error.message);
+        setMessage("Login successful!");
+        Cookies.set("token", data.token, { expires: 7 });
+        window.location.href = "/postlogin/dashboard";
+      }
+    } catch (error) {
+      setMessage("An error occurred. Please try again.");
     }
   };
 
@@ -63,9 +62,7 @@ const Login = () => {
             </div>
 
             <form
-              onSubmit={(e) => {
-                handleSubmit(e);
-              }}
+              onSubmit={handleSubmit}
               className="flex flex-col gap-5 w-full"
             >
               <div>

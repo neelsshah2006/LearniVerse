@@ -6,6 +6,8 @@ import Mentoringsessions from "@/components/Mentoringsessions";
 import AddSession from "@/components/AddSession";
 import Head from "next/head";
 import clientPromise from "@/lib/mongodb";
+import { generatedAccessToken } from "@/utils/generatedAccessToken";
+import { generatedRefreshToken } from "@/utils/generatedRefreshToken";
 import Cookies from "js-cookie";
 
 const Dashboard = ({ user }) => {
@@ -32,7 +34,7 @@ const Dashboard = ({ user }) => {
             <div className="flex gap-2 mt-4 md:mt-0">
               <span className="flex gap-2 bg-amber-100 p-1 rounded-2xl items-center">
                 <Image
-                  src="/coins.svg" 
+                  src="/coins.svg"
                   width={20}
                   height={20}
                   className="rounded-b-4xl"
@@ -104,9 +106,10 @@ const Dashboard = ({ user }) => {
 
 export async function getServerSideProps(context) {
   const { req } = context;
-  const token = req.cookies.token;
+  const accessToken = req.cookies.accessToken;
+  const refreshToken = req.cookies.refreshToken;
 
-  if (!token) {
+  if (!accessToken || !refreshToken) {
     return {
       redirect: {
         destination: "/auth/login",
@@ -116,9 +119,11 @@ export async function getServerSideProps(context) {
   }
 
   const client = await clientPromise;
-  const db = client.db("learniverse");
+  const db = client.db("test");
 
-  const user = await db.collection("users").findOne({ token });
+  const user = await db
+    .collection("users")
+    .findOne({ accessToken, refreshToken });
 
   if (!user) {
     return {
