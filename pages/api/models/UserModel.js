@@ -44,7 +44,10 @@ const userSchema = new mongoose.Schema({
     }],
 
 
-
+    access_token: {
+        type: String,
+        default: ""
+    },
     refresh_token: {
         type: String,
         default: ""
