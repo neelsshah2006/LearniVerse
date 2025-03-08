@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import Head from "next/head";
 
 const login = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +11,34 @@ const login = () => {
 
   return (
     <>
+      <Head>
+        <title>Login - LearniVerse</title>
+        <link rel="icon" href="/logo.png" />
+        <meta
+          name="description"
+          content="Login to LearniVerse, the peer-to-peer learning academy where you can learn, mentor, and earn. Empower your skills and knowledge through our community-driven platform."
+        />
+        <meta
+          name="keywords"
+          content="LearniVerse, login, peer-to-peer learning, mentoring, online courses, education, learning, teaching, skills, knowledge"
+        />
+        <meta name="author" content="LearniVerse Team" />
+        <meta property="og:title" content="Login - LearniVerse" />
+        <meta
+          property="og:description"
+          content="Login to LearniVerse, the peer-to-peer learning academy where you can learn, mentor, and earn. Empower your skills and knowledge through our community-driven platform."
+        />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content="https://www.learniverse.com/login" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Login - LearniVerse" />
+        <meta
+          name="twitter:description"
+          content="Login to LearniVerse, the peer-to-peer learning academy where you can learn, mentor, and earn. Empower your skills and knowledge through our community-driven platform."
+        />
+        <meta name="twitter:image" content="/logo.png" />
+      </Head>
       <div className="bg-gray-200 w-screen h-screen flex flex-col gap-10 p-4 md:p-8">
         <div className="flex h-15 w-full items-center px-3">
           <Link href={"/"} className="flex items-center gap-3">

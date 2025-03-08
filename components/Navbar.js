@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
   return (
@@ -12,9 +13,14 @@ const Navbar = () => {
         LearniVerse
       </Link>
       <div className="hidden md:flex flex-grow justify-center gap-10 font-semibold">
-        <Link className="hover:text-blue-700" href="/">
+        <ScrollLink
+          to="PopularCohort"
+          smooth={true}
+          duration={500}
+          className="hover:text-blue-700 cursor-pointer"
+        >
           Cohorts
-        </Link>
+        </ScrollLink>
         <Link className="hover:text-blue-700" href="/">
           Doubts
         </Link>

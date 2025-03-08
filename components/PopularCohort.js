@@ -3,7 +3,7 @@ import CohortCard from "./CohortCard";
 
 const PopularCohort = () => {
   return (
-    <div className="flex gap-3 flex-col p-10 lg:px-30">
+    <div className="flex gap-3 flex-col p-10 lg:px-30 mb-10">
       <div className="text-3xl font-bold">Popular Cohorts</div>
       <p>
         Join structured learning paths with peers who share your goals and
